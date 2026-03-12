@@ -41,8 +41,6 @@ public class Usuario {
     @JsonManagedReference
     @OneToMany(
             mappedBy = "usuario",
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
-            orphanRemoval = false,
             fetch = FetchType.LAZY
     )
     private List<Venda> vendas = new ArrayList<>();

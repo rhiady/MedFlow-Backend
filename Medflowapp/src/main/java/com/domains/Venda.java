@@ -67,7 +67,7 @@ public class Venda {
     public Venda(Long id, LocalDateTime dataVenda, BigDecimal valorTotal, TipoPagamento tipoPagamento, Cliente cliente, Usuario usuario, List<ItemVenda> itens) {
         this.id = id;
         this.dataVenda = dataVenda;
-        this.valorTotal = valorTotal != null ? valorTotal : BigDecimal.ZERO;;
+        this.valorTotal = valorTotal != null ? valorTotal : BigDecimal.ZERO;
         this.tipoPagamento = tipoPagamento;
         this.cliente = cliente;
         this.usuario = usuario;
