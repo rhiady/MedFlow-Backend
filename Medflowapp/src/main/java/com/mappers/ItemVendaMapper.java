@@ -77,4 +77,18 @@ public class ItemVendaMapper {
         Medicamento medicamento = (dto.getMedicamentoId() == null) ? null : medicamentoResolver.apply(dto.getMedicamentoId());
         copyToEntity(dto, target, medicamento);
     }
+    public static List<ItemVenda> toEntityList(
+            List<ItemVendaDTO> dtos,
+            java.util.function.Function<Long, Medicamento> medicamentoFinder) {
+
+        if (dtos == null) return List.of();
+
+        return dtos.stream()
+                .filter(Objects::nonNull)
+                .map(dto -> {
+                    Medicamento medicamento = medicamentoFinder.apply(dto.getMedicamentoId());
+                    return toEntity(dto, medicamento);
+                })
+                .collect(Collectors.toList());
+    }
 }
