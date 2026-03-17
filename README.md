@@ -10,11 +10,11 @@ O **MedFlow Backend** é uma aplicação desenvolvida com Spring Boot que permit
 
 O sistema permite:
 
-- Cadastro e gerenciamento de medicamentos  
-- Registro de vendas  
-- Controle de quantidade de medicamentos  
-- Gerenciamento de usuários  
-- Cadastro de clientes e fornecedores  
+- Cadastro e gerenciamento de medicamentos
+- Registro de vendas
+- Controle de quantidade de medicamentos
+- Gerenciamento de usuários
+- Cadastro de clientes e fornecedores
 
 ---
 
@@ -31,9 +31,32 @@ O sistema permite:
 
 ---
 
+## 📌 Diagrama de Classes
+
+![Diagrama de Classes](Diagrama de Classes.png)
+
+---
+
+## 🗄️ Banco de Dados
+
+O projeto utiliza o **H2 Database em memória**.
+
+### 🔎 Console do H2
+
+http://localhost:8080/h2-console
+
+### ⚙️ Configuração
+
+- **JDBC URL:** `jdbc:h2:mem:cursodb`
+- **User:** `sa`
+- **Password:** _(vazio)_
+
+---
+
 ## 📂 Estrutura do Projeto
 
-```bash
+```
+bash
 src/main/java/com/
 
 ├── domains/         # Entidades (Medicamento, Venda, Usuario, ItemVenda, Cliente, Fornecedor)
@@ -113,7 +136,6 @@ GET    /itens-venda
 GET    /itens-venda/{id}
 PUT    /itens-venda/{id}
 DELETE /itens-venda/{id}
-
 ✅ Regras de Negócio
 
 Os itens de venda são enviados diretamente no POST /vendas
@@ -133,23 +155,12 @@ O sistema mantém consistência dos dados após cada operação
 ▶️ Como Executar o Projeto
 1️⃣ Clonar o repositório
 git clone https://github.com/seu-usuario/medflow-backend.git
+2️⃣ Acessar o diretório
+cd medflow-backend
+3️⃣ Executar o projeto
+./mvnw spring-boot:run
 
-❗ Tratamento de Erros
+No Windows:
 
-O sistema possui tratamento global de exceções:
-
-400 → Erro de validação
-
-404 → Recurso não encontrado
-
-500 → Erro interno do servidor
-
-📌 Melhorias Futuras
-
-Autenticação com JWT
-
-Controle de permissões avançado
-
-Relatórios de vendas
-
-Dashboard administrativo
+mvnw.cmd spring-boot:run
+```
