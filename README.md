@@ -33,7 +33,7 @@ O sistema permite:
 
 ## 📌 Diagrama de Classes
 
-![Diagrama de Classes](Diagrama de Classes.png)
+<img width="1204" height="809" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/b9a65f1e-b6a2-4699-8d1b-1fa7fce1e876" />
 
 ---
 
@@ -67,6 +67,8 @@ src/main/java/com/
 ├── mappers/         # Conversão Entity ↔ DTO
 ├── config/          # Configurações
 └── exceptions/      # Tratamento de erros
+
+```
 ⚙️ Funcionalidades
 👤 Usuários
 
