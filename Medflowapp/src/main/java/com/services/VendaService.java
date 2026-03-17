@@ -32,17 +32,13 @@ public class VendaService {
     private final UsuarioRepository usuarioRepo;
     private final MedicamentoRepository medicamentoRepo;
 
-    public VendaService(VendaRepository vendaRepo,
-                        ClienteRepository clienteRepo,
-                        UsuarioRepository usuarioRepo,
-                        MedicamentoRepository medicamentoRepo) {
+    public VendaService(VendaRepository vendaRepo, ClienteRepository clienteRepo, UsuarioRepository usuarioRepo, MedicamentoRepository medicamentoRepo) {
         this.vendaRepo = vendaRepo;
         this.clienteRepo = clienteRepo;
         this.usuarioRepo = usuarioRepo;
         this.medicamentoRepo = medicamentoRepo;
     }
 
-    /* =================== READ =================== */
 
     @Transactional
     public List<VendaDTO> findAll() {
@@ -81,7 +77,6 @@ public class VendaService {
                         new ObjectNotFoundException("Venda não encontrada: id=" + id));
     }
 
-    /* =================== CREATE =================== */
 
     @Transactional
     public VendaDTO create(VendaDTO dto) {
@@ -111,7 +106,6 @@ public class VendaService {
         return VendaMapper.toDto(vendaRepo.save(venda));
     }
 
-    /* =================== UPDATE =================== */
 
     @Transactional
     public VendaDTO update(Long id, VendaDTO dto) {
@@ -143,7 +137,6 @@ public class VendaService {
         return VendaMapper.toDto(vendaRepo.save(venda));
     }
 
-    /* =================== DELETE =================== */
 
     @Transactional
     public void delete(Long id) {
